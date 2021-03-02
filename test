@@ -1,0 +1,5 @@
+st build options:
+CFLAGS  = -I/usr/X11R6/include  -I/usr/include/freetype2 -I/usr/include/uuid   -I/usr/include/freetype2   -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -DVERSION="0.8.4" -D_XOPEN_SOURCE=600  -O1
+LDFLAGS = -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  -lXcursor -lfontconfig -lfreetype   -lfreetype   -lharfbuzz  
+CC      = gcc
+gcc -o st st.o x.o hb.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  -lXcursor `pkg-config --libs fontconfig`  `pkg-config --libs freetype2`  `pkg-config --libs harfbuzz` 
